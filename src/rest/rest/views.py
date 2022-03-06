@@ -12,16 +12,14 @@ class TodoListView(APIView):
 
     def get(self, request):
         # Implement this method - return all todo items from db instance above.
-        result=[]
-        todo = collection1.find({})
-        for r in todo:
-            #result.append("name:\x7f\x7f")
+        result=[]         #declare an empty array
+        todo = collection1.find({})         #iterate over the entire collection and return all the key value pairs
+        for r in todo:                      #iterate over todo and make a list of all the "name" field values
             result.append(r["name"])
-        resp={"task_list":result}
-        return Response(resp, status=status.HTTP_200_OK)
+        return Response(result, status=status.HTTP_200_OK) #return result
         
     def post(self, request):
         # Implement this method - accept a todo item in a mongo collection, persist it using db instance above.
-        collection1.insert(request.data)
+        collection1.insert(request.data)            #insert request data in the collection1
         return Response(request.data, status=status.HTTP_200_OK)
 

@@ -1,6 +1,20 @@
 # AdBrew Test!
 
-Hello! This test is designed to specifically test your Python, React and web development skills. The task is unconventional and has a slightly contrived setup on purpose and requires you to learn basic concepts of Docker on the fly. 
+Hello! This is the solution to the test given by your firm. PLEASE READ THE UPDATED SETUP INSTRUCTIONS CAREFULLY TO GET THE PROJECT RUNNING.
+
+There were many mistakes in your docker-compose.yml and Dockerfile files that I have debugged and sorted out. You had also made use of obsolete installation methods (eg. easy_install) that I replaced with updated and contemporary methods. 
+
+I then worked on the API (views.py file) and created a working API that handles Get and Post requests. 
+
+Creating the frontend using React useState hooks and props was a simple task.
+
+*To test the API, go to http://localhost:8000/todos and insert values in key:value pair format with key = "name", for example:
+
+```
+{"name":"todo_item"}
+```
+
+Replace todo_item with whatever you'd like to add.
 
 
 # Structure
@@ -19,16 +33,21 @@ git clone https://github.com/adbrew/test.git
 ```
 2. Change into the cloned directory and set the environment variable for the code path. Replace `path_to_repository` appropriately.
 ```
-export ADBREW_CODEBASE_PATH="{path_to_repository}/test/src"
+export ADBREW_CODEBASE_PATH= 'path_to_repository'
 ```
 3. Build container (you only need to build containers for the first time or if you change image definition, i.e., `Dockerfile`). This step will take a good amount of time.
 ```
 docker-compose build
 ```
+* Use -E flag if it can't get the code path right.
+```
+sudo -E docker-compose build
+```
 4. Once the build is completed, start the containers:
 ```
 docker-compose up -d
 ```
+*Again, use -E flag like in step 3 if docker-compose gives any trouble.
 5. Once complete, `docker ps` should output something like this:
 ```
 CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS         PORTS                      NAMES

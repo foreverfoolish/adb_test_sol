@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-const Todo = ({name}) =>{
+const Todo = ({name}) =>{           //import name using react prop in line 41 of App.js
     return(
         <>
             <div>

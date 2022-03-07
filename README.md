@@ -1,4 +1,4 @@
-# AdBrew Test!
+# AdBrew Test Solution!
 
 Hello! This is the solution to the test given by your firm. PLEASE READ THE UPDATED SETUP INSTRUCTIONS CAREFULLY TO GET THE PROJECT RUNNING.
 
